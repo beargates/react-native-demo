@@ -6,14 +6,16 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {colors} from '../../common/variables';
 
 class NewsDetails extends Component {
-  render() {
-    const {title, userName, createTime} = this.props.item.item;
+  static navigationOptions = {
+    headerTitle: '详情'
+  }
 
+  render() {
     return <TouchableOpacity style={styles.container}>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={styles.title}>title</Text>
       <View style={styles.detailsWrapper}>
-        <Text style={styles.userName}>{userName}</Text>
-        <Text style={styles.time}>{createTime}</Text>
+        <Text style={styles.userName}>userName</Text>
+        <Text style={styles.time}>createTime</Text>
       </View>
     </TouchableOpacity>
   }

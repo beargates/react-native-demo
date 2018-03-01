@@ -6,15 +6,14 @@ import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {colors} from '../../common/variables';
 
 class ListItem extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
 
     this.onPress = this.onPress.bind(this);
   }
 
-  onPress(){
-    console.log(this.props)
-    this.props.navigation.navigate('NewsDetails');
+  onPress() {
+    this.props.onPress();
   }
 
   render() {

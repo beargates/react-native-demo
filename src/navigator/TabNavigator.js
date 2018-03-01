@@ -4,8 +4,8 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {TabNavigator} from 'react-navigation';
-import HomeScreen from '../pages/Home';
-import SettingScreen from '../pages/Setting';
+import HomeScreen from '../pages/home';
+import SettingScreen from '../pages/setting';
 import TabBar from './TabBar';
 
 const routeConfigs = {
