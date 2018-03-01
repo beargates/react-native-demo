@@ -69,7 +69,6 @@ class HomeScreen extends Component {
   }
 
   render() {
-    console.log(this.props)
     return <FlatList
       style={{paddingLeft: 15}}
       keyExtractor={this._keyExtractor}
