@@ -14,10 +14,10 @@ const routeConfigs = {
     path: 'tabs/:name', // path属性适用于其他app或浏览器使用url打开本app并进入指定页面
     navigationOptions: ({navigation}) => ({
       // 设置tabBar title的三种方法 tabBarLabel优先生效，其次是title
-      title: '列表', // title还有一个作用是设置StackNavigator里navigation的title
-      // tabBarLabel: '列表',
+      title: '阅读', // title还有一个作用是设置StackNavigator里navigation的title
+      // tabBarLabel: '阅读',
       tabBarLabel: (options) => {
-        return '列表';
+        return '阅读';
       },
     }),
   },

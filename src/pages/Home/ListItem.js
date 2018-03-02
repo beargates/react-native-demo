@@ -20,7 +20,7 @@ class ListItem extends Component {
     const {title, userName, createTime} = this.props.item.item;
 
     return <TouchableOpacity style={styles.container} onPress={this.onPress}>
-      <Text style={styles.title}>{title}</Text>
+      <Text numberOfLines={2} style={styles.title}>{title}</Text>
       <View style={styles.detailsWrapper}>
         <Text style={styles.userName}>{userName}</Text>
         <Text style={styles.time}>{createTime}</Text>
