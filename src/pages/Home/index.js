@@ -2,7 +2,7 @@
  *
  */
 import React, { Component } from 'react';
-import { FlatList, Text, Image, TouchableWithoutFeedback, View } from 'react-native';
+import { FlatList, Text, Image, TouchableWithoutFeedback, View, StyleSheet } from 'react-native';
 import { NavigationActions } from 'react-navigation';
 import { Carousel } from 'antd-mobile';
 import ItemSeparator from './ItemSeparator';
@@ -58,9 +58,9 @@ const carouselData = [
     coverFile: require('../../styles/images/1.jpg'),
   },
   {
-    title: '比特币和以太坊技术原理对比之账户模型',
+    title: '过年就学"区块链"',
     coverUri: 'http://facebook.github.io/react/img/logo_og.png',
-    coverFile: require('../../styles/images/1.jpg'),
+    coverFile: require('../../styles/images/2.jpg'),
   }
 ];
 
@@ -91,24 +91,26 @@ class HomeScreen extends Component {
         beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
         afterChange={index => console.log('slide to', index)}
       >
-        {carouselData.map(item => (
-          <TouchableWithoutFeedback
-            key={item}
-            style={{}}
-            onPress={this.onItemPress}
-          >
-            <View>
-              <Image
-                source={item.coverFile}
-                style={{ height: 100 }}
-              />
-              <Text>{item.title}</Text>
-            </View>
-          </TouchableWithoutFeedback>
-        ))}
+        {
+          carouselData.map(item => (
+            <TouchableWithoutFeedback
+              key={item}
+              style={{}}
+              onPress={this.onItemPress}
+            >
+              <View>
+                <Image
+                  source={item.coverFile}
+                  style={{ height: 100 }}
+                />
+                <Text style={styles.carouselTitle}>{item.title}</Text>
+              </View>
+            </TouchableWithoutFeedback>
+          ))
+        }
       </Carousel>
       <FlatList
-        style={{ paddingLeft: 15 }}
+        style={styles.list}
         keyExtractor={this._keyExtractor}
         data={listData}
         renderItem={item => <ListItem item={item} onPress={this.onItemPress}/>}
@@ -117,5 +119,16 @@ class HomeScreen extends Component {
     </View>
   }
 }
+
+const styles = StyleSheet.create({
+  list: {
+    paddingLeft: 15,
+  },
+  carouselTitle: {
+    position: 'absolute',
+    left: 0,
+    bottom: 0,
+  }
+});
 
 export default HomeScreen;
