@@ -1,9 +1,10 @@
 /**
  *
  */
-import React, {Component} from 'react';
-import {FlatList, Text} from 'react-native';
-import {NavigationActions} from 'react-navigation';
+import React, { Component } from 'react';
+import { FlatList, Text, Image, TouchableWithoutFeedback, View } from 'react-native';
+import { NavigationActions } from 'react-navigation';
+import { Carousel } from 'antd-mobile';
 import ItemSeparator from './ItemSeparator';
 import ListItem from './ListItem';
 
@@ -50,6 +51,18 @@ const listData = [
     createTime: 1519882814186,
   }
 ];
+const carouselData = [
+  {
+    title: '比特币和以太坊技术原理对比之账户模型',
+    coverUri: 'http://facebook.github.io/react/img/logo_og.png',
+    coverFile: require('../../styles/images/1.jpg'),
+  },
+  {
+    title: '比特币和以太坊技术原理对比之账户模型',
+    coverUri: 'http://facebook.github.io/react/img/logo_og.png',
+    coverFile: require('../../styles/images/1.jpg'),
+  }
+];
 
 class HomeScreen extends Component {
   _keyExtractor = (item, idx) => `${idx}`;
@@ -60,7 +73,7 @@ class HomeScreen extends Component {
     this.onItemPress = this.onItemPress.bind(this);
   }
 
-  onItemPress(){
+  onItemPress() {
     const navigateAction = NavigationActions.navigate({
       routeName: 'NewsDetails',
       params: {},
@@ -68,14 +81,40 @@ class HomeScreen extends Component {
     this.props.navigation.dispatch(navigateAction);
   }
 
+  // Carousel如果只有一个item，则滑动时会出现bug
   render() {
-    return <FlatList
-      style={{paddingLeft: 15}}
-      keyExtractor={this._keyExtractor}
-      data={listData}
-      renderItem={item => <ListItem item={item} onPress={this.onItemPress}/>}
-      ItemSeparatorComponent={ItemSeparator}
-    />
+    return <View>
+      <Carousel
+        autoplay
+        infinite
+        selectedIndex={0}
+        beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
+        afterChange={index => console.log('slide to', index)}
+      >
+        {carouselData.map(item => (
+          <TouchableWithoutFeedback
+            key={item}
+            style={{}}
+            onPress={this.onItemPress}
+          >
+            <View>
+              <Image
+                source={item.coverFile}
+                style={{ height: 100 }}
+              />
+              <Text>{item.title}</Text>
+            </View>
+          </TouchableWithoutFeedback>
+        ))}
+      </Carousel>
+      <FlatList
+        style={{ paddingLeft: 15 }}
+        keyExtractor={this._keyExtractor}
+        data={listData}
+        renderItem={item => <ListItem item={item} onPress={this.onItemPress}/>}
+        ItemSeparatorComponent={ItemSeparator}
+      />
+    </View>
   }
 }
 

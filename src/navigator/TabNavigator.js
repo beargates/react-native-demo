@@ -4,7 +4,9 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {TabNavigator} from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import HomeScreen from '../pages/home';
+import NewsNewScreen from '../pages/news-new';
 import SettingScreen from '../pages/setting';
 import TabBar from './TabBar';
 
@@ -20,6 +22,15 @@ const routeConfigs = {
         return '阅读';
       },
     }),
+  },
+  Add: {
+    screen: NewsNewScreen,
+    // path: '',
+    navigationOptions: navigation => ({
+      tabBarLabel: () => {
+        return <Icon name="edit" size={40} color="#0c89cf" />
+      }
+    })
   },
   Setting: {
     screen: SettingScreen,
@@ -38,9 +49,11 @@ const tabNavigatorConfig = {
     labelStyle: {
       fontSize: 18,
       lineHeight: 48,
+      justifyContent: 'center',
     },
     style: {
       // backgroundColor: 'blue',
+      // justifyContent: 'center',
     },
   }
 };
