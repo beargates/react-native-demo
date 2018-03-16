@@ -13,3 +13,6 @@
        `$ pod init`
        
        `$ pod install`
+       
+# 注意
+* 官方推荐使用yarn代替npm（见react-native-cli/index.js）
