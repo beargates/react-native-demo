@@ -19,15 +19,17 @@ class ListItem extends Component {
   render() {
     const {title, userName, createTime} = this.props.item.item;
 
-    return <TouchableOpacity style={styles.container} onPress={this.onPress}>
-      <Text numberOfLines={2} style={styles.title}>{title}</Text>
-      <View style={styles.detailsWrapper}>
-        <Text style={styles.userName}>{userName}</Text>
-        <Text style={styles.time}>{createTime}</Text>
-      </View>
-    </TouchableOpacity>
+    return (
+      <TouchableOpacity style={styles.container} onPress={this.onPress}>
+        <Text numberOfLines={2} style={styles.title}>{title}</Text>
+        <View style={styles.detailsWrapper}>
+          <Text style={styles.userName}>{userName}</Text>
+          <Text style={styles.time}>{createTime}</Text>
+        </View>
+      </TouchableOpacity>)
   }
 }
+
 const detailsStyle = {
   fontSize: 14,
   color: colors.details,
