@@ -1,10 +1,10 @@
 /**
- *
+ * StackNavigator
  */
-import React from 'react';
 import {StackNavigator} from 'react-navigation';
 import Tab from './TabNavigator';
 import NewsDetails from '../pages/news-details';
+import AboutScreen from '../pages/about';
 
 const routeConfig = {
   Tab: {
@@ -12,6 +12,9 @@ const routeConfig = {
   },
   NewsDetails: {
     screen: NewsDetails
+  },
+  About: {
+    screen: AboutScreen
   },
 };
 const navigationOptions = {};
