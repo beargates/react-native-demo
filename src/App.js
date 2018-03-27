@@ -6,7 +6,7 @@
 
 import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
-import Navigator from './navigator/StackNavigator';
+import Navigator from './navigator/TabNavigator';
 
 export default class App extends Component {
   render() {

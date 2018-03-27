@@ -1,9 +1,12 @@
 import React, {Component} from 'react';
-import {View} from 'react-native';
+import {View, Text} from 'react-native';
 
 class NewsNew extends Component {
   render() {
-    return <View></View>
+    return (
+      <View>
+        <Text>new news</Text>
+      </View>)
   }
 }
 

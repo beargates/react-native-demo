@@ -2,19 +2,19 @@
  * StackNavigator
  */
 import {StackNavigator} from 'react-navigation';
-import Tab from './TabNavigator';
-import NewsDetails from '../pages/news-details';
 import AboutScreen from '../pages/about';
+import SettingScreen from '../pages/setting';
 
 const routeConfig = {
-  Tab: {
-    screen: Tab
-  },
-  NewsDetails: {
-    screen: NewsDetails
+  Setting: {
+    screen: SettingScreen,
+    navigationOptions: () => ({
+      title: '设置',
+      tabBarLabel: '设置'
+    }),
   },
   About: {
-    screen: AboutScreen
+    screen: AboutScreen,
   },
 };
 const navigationOptions = {};
