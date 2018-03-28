@@ -1,5 +1,6 @@
 # 简介
-* 仿开发者头条（欢迎提issue，欢迎成为contributor）
+* 仿开发者头条
+* 欢迎提issue，欢迎成为contributor
 
 # todo list
 * 常用第三方插件使用demo，心得及踩坑
