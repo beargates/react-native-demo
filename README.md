@@ -7,7 +7,7 @@
 * 性能优化，buddle拆包，热更新
 
 # 使用方法
-  1. 先初始化AwesomeProject
+  1. 初始化AwesomeProject
   
   2. `$ cd ios`
   
