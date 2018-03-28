@@ -11,15 +11,17 @@ class NewsDetails extends Component {
   }
 
   render() {
-    return <TouchableOpacity style={styles.container}>
-      <Text style={styles.title}>title</Text>
-      <View style={styles.detailsWrapper}>
-        <Text style={styles.userName}>userName</Text>
-        <Text style={styles.time}>createTime</Text>
-      </View>
-    </TouchableOpacity>
+    return (
+      <TouchableOpacity style={styles.container}>
+        <Text style={styles.title}>title</Text>
+        <View style={styles.detailsWrapper}>
+          <Text style={styles.userName}>userName</Text>
+          <Text style={styles.time}>createTime</Text>
+        </View>
+      </TouchableOpacity>)
   }
 }
+
 const detailsStyle = {
   fontSize: 14,
   color: colors.details,

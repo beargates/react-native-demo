@@ -6,14 +6,15 @@ import {View, Text, StyleSheet, TouchableWithoutFeedback} from 'react-native';
 
 class TabBar extends Component {
   render() {
-    return <View style={styles.container}>
-      <TouchableWithoutFeedback style={styles.tabItem}>
-        <Text style={styles.tabLabel}>列表</Text>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback style={styles.tabItem}>
-        <Text style={styles.tabLabel}>设置</Text>
-      </TouchableWithoutFeedback>
-    </View>
+    return (
+      <View style={styles.container}>
+        <TouchableWithoutFeedback style={styles.tabItem}>
+          <Text style={styles.tabLabel}>列表</Text>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback style={styles.tabItem}>
+          <Text style={styles.tabLabel}>设置</Text>
+        </TouchableWithoutFeedback>
+      </View>)
   }
 }
 
